@@ -25,6 +25,19 @@ public class Musique {
         this.dateDepot = new GregorianCalendar();
     }
 
+    
+    public Musique(String titre, String typeMusique, int dureeSeconde, Artiste artiste, int tempo, String statut, String styleMusique) {
+        this.titre = titre;
+        this.typeMusique = typeMusique;
+        this.dureeSeconde = dureeSeconde;
+        this.artiste = artiste;
+        this.album = null;
+        this.tempo = tempo;
+        this.statut = statut;
+        this.styleMusique = styleMusique;
+        this.dateDepot = new GregorianCalendar();
+    }
+
     public String getTitre() {
         return titre;
     }
