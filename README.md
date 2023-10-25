@@ -1,1 +1,1 @@
-# Travaille réaliser par Stéphane Thiry et Frédéric Turcq-Santucci
+# Projet réalisé par Stéphane Thiry et Frédéric Turcq-Santucci
