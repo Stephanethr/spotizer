@@ -36,8 +36,9 @@ public class Facture {
         int dureeSecondeTotal = 0;
         for (Musique musique : utilisateur.getListeEcoute()) {
             dureeSecondeTotal += musique.getdureeSeconde();
-            totalAPayer = (dureeSecondeTotal%300) * utilisateur.getAbonnement().getPrix();
+            musique.getArtiste().gagnerArgent((musique.getdureeSeconde()/300) * utilisateur.getAbonnement().getPrix());
         }
+        totalAPayer += (dureeSecondeTotal/300) * utilisateur.getAbonnement().getPrix();
         utilisateur.setFactures(this);
     }
 

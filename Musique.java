@@ -11,6 +11,7 @@ public class Musique {
     private Artiste artiste;
     private Album album;
     private GregorianCalendar dateDepot;
+    private int nbEcoutes;
 
     public Musique(String titre, String typeMusique, int dureeSeconde, Artiste artiste, Album album, int tempo, String statut, String styleMusique) {
         this.titre = titre;
@@ -100,4 +101,11 @@ public class Musique {
         return dateDepot;
     }
 
+    public int getNbEcoutes() {
+        return nbEcoutes;
+    }
+
+    public void setNbEcoutes(int nbEcoutes) {
+        this.nbEcoutes = nbEcoutes;
+    }
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Artiste extends Personne{
-    private int sommePercue;
+    private double sommePercue;
     private ArrayList<Musique> musiques = new ArrayList<Musique>();
     private ArrayList<Album> albums = new ArrayList<Album>();
 
@@ -27,11 +27,11 @@ public class Artiste extends Personne{
         this.prenom = prenom;
     }
     
-    public int getArgentPercue() {
+    public double getArgentPercue() {
         return sommePercue;
     }
       
-    public void gagnerArgent(int somme) {
+    public void gagnerArgent(double somme) {
         this.sommePercue += somme;
     }
 
@@ -43,7 +43,4 @@ public class Artiste extends Personne{
         return albums;
     }
     
-    public void jouer() {
-        System.out.println(nom + " joue de la musique !");
-    }
 }
