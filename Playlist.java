@@ -55,7 +55,7 @@ public class Playlist {
 
         for (Musique musique : musiques ) {
              this.duree = 0;
-             this.duree =+ musique.getDuree();
+             this.duree =+ musique.getdureeSeconde();
           }
     }
    
