@@ -4,15 +4,15 @@ public class Album {
     private String titre;
     private int dureeSecondeTotal;
     private String visuel;
-    private ArrayList<Musique> musiques = new ArrayList<Musique>();
-    private ArrayList<Artiste> artistes = new ArrayList<Artiste>();
+    private ArrayList<Musique> musiques;
+    private ArrayList<Artiste> artistes;
 
     public Album(String titre, String visuel,ArrayList<Artiste> artistes, ArrayList<Musique> musiques) {
         this.titre = titre;
         setdureeSecondeTotal();
         this.visuel = visuel;
-        this.musiques = musiques;
         this.artistes = artistes;
+        this.musiques = musiques;
     }
 
     // Méthode pour récupérer le titre de l'album
@@ -50,6 +50,11 @@ public class Album {
     // Méthode pour récupérer la liste des musiques de l'album
     public ArrayList<Musique> getMusiques() {
         return musiques; // Retourne la liste de musiques
+    }
+
+    public void setMusiques(Musique musique) {
+        this.musiques.add(musique); // Retourne la liste de musiques
+        musique.setAlbum(this);
     }
 
     

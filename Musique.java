@@ -1,5 +1,5 @@
 import java.util.GregorianCalendar;
-
+import java.util.ArrayList;
 public class Musique {
     private String titre; // Titre de la musique
     private String typeMusique; // Type de musique
@@ -9,31 +9,18 @@ public class Musique {
     private String statut; // Statut de la musique (peut être utile pour des informations supplémentaires)
     private String styleMusique; // Style de la musique
     private Artiste artiste; // Artiste associé à la musique
-    private Album album; // Album associé à la musique
+    private ArrayList<Album> albums; // Albums associé à la musique
     private GregorianCalendar dateDepot; // Date de dépôt de la musique
     private int nbEcoutes; // Nombre d'écoutes de la musique
 
-    // Constructeur de la classe Musique
-    public Musique(String titre, String typeMusique, int dureeSeconde, Artiste artiste, Album album, int tempo, String statut, String styleMusique) {
-        this.titre = titre; // Initialise le titre avec la valeur passée en paramètre
-        this.typeMusique = typeMusique; // Initialise le type de musique avec la valeur passée en paramètre
-        this.dureeSeconde = dureeSeconde; // Initialise la durée en secondes avec la valeur passée en paramètre
-        this.artiste = artiste; // Initialise l'artiste associé avec la valeur passée en paramètre
-        this.album = album; // Initialise l'album associé avec la valeur passée en paramètre
-        this.tempo = tempo; // Initialise le tempo avec la valeur passée en paramètre
-        this.statut = statut; // Initialise le statut avec la valeur passée en paramètre
-        this.styleMusique = styleMusique; // Initialise le style de musique avec la valeur passée en paramètre
-        this.dateDepot = new GregorianCalendar(); // Initialise la date de dépôt avec la date courante
-    }
-
-    
+    // Constructeur de la classe Musique   
 
     public Musique(String titre, String typeMusique, int dureeSeconde, Artiste artiste, int tempo, String statut, String styleMusique) {
         this.titre = titre;
         this.typeMusique = typeMusique;
         this.dureeSeconde = dureeSeconde;
         this.artiste = artiste;
-        this.album = null;
+        this.albums = null;
         this.tempo = tempo;
         this.statut = statut;
         this.styleMusique = styleMusique;
@@ -121,13 +108,13 @@ public class Musique {
     }
 
     // Méthode pour récupérer l'album associé à la musique
-    public Album getAlbum() {
-        return album; // Retourne l'album associé
+    public ArrayList<Album> getAlbum() {
+        return albums; // Retourne l'album associé
     }
 
     // Méthode pour définir un nouvel album associé à la musique
     public void setAlbum(Album album) {
-        this.album = album; // Met à jour l'album associé avec la nouvelle valeur passée en paramètre
+        this.albums.add(album); // Met à jour l'album associé avec la nouvelle valeur passée en paramètre
     }
 
     // Méthode pour récupérer la date de dépôt de la musique
