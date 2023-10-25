@@ -15,6 +15,7 @@ public class Playlist {
 
         this.libelle = libelle;
         calculDuree();
+        this.musiques = new ArrayList<Musique>();
         
     } 
 
