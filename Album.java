@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Album {
     private String titre;
-    private int dureeTotal;
+    private int dureeSecondeTotal;
     private String visuel;
     private ArrayList<Musique> musiques = new ArrayList<Musique>();
 
-    public Album(String titre, int dureeTotal, String visuel, ArrayList<Musique> musiques) {
+    public Album(String titre, String visuel, ArrayList<Musique> musiques) {
         this.titre = titre;
-        this.dureeTotal = dureeTotal;
+        setdureeSecondeTotal();
         this.visuel = visuel;
         this.musiques = musiques;
     }
@@ -19,11 +19,13 @@ public class Album {
     public void setTitre(String titre) {
         this.titre = titre;
     }
-    public int getDureeTotal() {
-        return dureeTotal;
+    public int getdureeSecondeTotal() {
+        return dureeSecondeTotal;
     }
-    public void setDureeTotal(int dureeTotal) {
-        this.dureeTotal = dureeTotal;
+    public void setdureeSecondeTotal() {
+        for (Musique musique : musiques) {
+            dureeSecondeTotal += musique.getdureeSeconde();
+        }
     }
     public String getVisuel() {
         return visuel;

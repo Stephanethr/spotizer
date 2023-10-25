@@ -1,6 +1,5 @@
 // importation
 
-import java.time.Year;
 import java.util.*;
 
 
@@ -13,8 +12,8 @@ public class Facture {
     private GregorianCalendar dateFacture;
     private Utilisateur utilisateur;
 
-    public Facture(double totalAPayer,  Utilisateur utilisateur) {
-        this.totalAPayer = totalAPayer;
+    public Facture(Utilisateur utilisateur) {
+        setTotalAPayer();
         this.dateFacture = new GregorianCalendar();
         this.utilisateur = utilisateur;
     }
@@ -24,9 +23,6 @@ public class Facture {
         return totalAPayer;
     }
 
-    public void setTotalAPayer(double totalAPayer) {
-        this.totalAPayer = totalAPayer;
-    }
 
     public GregorianCalendar getDateFacture() {
         return dateFacture;
@@ -35,9 +31,14 @@ public class Facture {
     public Utilisateur getUtilisateur() {
         return utilisateur;
     }
-    
-    public void setUtilisateur(Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+
+    public void setTotalAPayer() {
+        int dureeSecondeTotal = 0;
+        for (Musique musique : utilisateur.getListeEcoute()) {
+            dureeSecondeTotal += musique.getdureeSeconde();
+            totalAPayer = (dureeSecondeTotal%300) * utilisateur.getAbonnement().getPrix();
+        }
+        utilisateur.setFactures(this);
     }
 
     

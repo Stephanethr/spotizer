@@ -1,9 +1,3 @@
-// importation
-
-import java.time.Year;
-import java.util.*;
-
-
 // class Abonnement
 
 public class Abonnement {
@@ -21,9 +15,6 @@ public class Abonnement {
     
     public String getLibelle() {
         return libelle;
-    }
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
     }
     public double getPrix() {
         return prix;

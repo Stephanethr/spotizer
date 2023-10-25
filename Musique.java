@@ -3,7 +3,7 @@ import java.util.GregorianCalendar;
 public class Musique {
     private String titre;
     private String typeMusique;
-    private int duree;
+    private int dureeSeconde;
     private String visuel;
     private int tempo;
     private String statut;
@@ -12,10 +12,10 @@ public class Musique {
     private Album album;
     private GregorianCalendar dateDepot;
 
-    public Musique(String titre, String typeMusique, int duree, Artiste artiste, Album album, int tempo, String statut, String styleMusique) {
+    public Musique(String titre, String typeMusique, int dureeSeconde, Artiste artiste, Album album, int tempo, String statut, String styleMusique) {
         this.titre = titre;
         this.typeMusique = typeMusique;
-        this.duree = duree;
+        this.dureeSeconde = dureeSeconde;
         this.artiste = artiste;
         this.album = album;
         this.tempo = tempo;
@@ -40,12 +40,12 @@ public class Musique {
         this.typeMusique = typeMusique;
     }
 
-    public int getDuree() {
-        return duree;
+    public int getdureeSeconde() {
+        return dureeSeconde;
     }
 
-    public void setDuree(int duree) {
-        this.duree = duree;
+    public void setdureeSeconde(int dureeSeconde) {
+        this.dureeSeconde = dureeSeconde;
     }
 
     public String getVisuel() {
