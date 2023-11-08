@@ -2,41 +2,17 @@
 import java.util.*;
 
 // Classe Playlist
-public class Playlist {
-
-    private String libelle; // Le libellé de la playlist
-    private double duree; // La durée totale de la playlist en secondes
-    private List<Musique> musiques; // Liste des musiques dans la playlist
+public class Playlist extends Collection{
+    protected int duree; // Durée totale de la playlist
 
     // Constructeur de la classe Playlist
-    public Playlist(String libelle) {
-        this.libelle = libelle; // Initialise le libellé avec la valeur passée en paramètre
-        calculDuree(); // Calcule et initialise la durée totale de la playlist
-        this.musiques = new ArrayList<Musique>(); // Initialise la liste de musiques
+    public Playlist(String titre, String visuel, ArrayList<Artiste> artistes, ArrayList<Musique> musiques) {
+        super(titre, visuel, artistes, musiques);
+        calculDuree(); // Calcule la durée totale de la playlist
     } 
 
-    // Méthode pour récupérer le libellé de la playlist
-    public String getLibelle() {
-        return libelle; // Retourne le libellé
-    }
-
-    // Méthode pour définir un nouveau libellé pour la playlist
-    public void setLibelle(String libelle) {
-        this.libelle = libelle; // Met à jour le libellé avec la nouvelle valeur passée en paramètre
-    }
-
-    // Méthode pour récupérer la durée totale de la playlist
-    public double getDuree() {
-        return duree; // Retourne la durée totale
-    }
-
-    // Méthode pour récupérer la liste des musiques dans la playlist
-    public List<Musique> getMusiques() {
-        return musiques; // Retourne la liste de musiques
-    }
-
     // Méthode pour définir la liste complète de musiques pour la playlist
-    public void setMusiques(List<Musique> musiques) {
+    public void setMusiques(ArrayList<Musique> musiques) {
         this.musiques = musiques; // Met à jour la liste de musiques
         calculDuree(); // Recalcule la durée totale
     }
@@ -49,8 +25,8 @@ public class Playlist {
 
     // Méthode pour calculer la durée totale de la playlist
     public void calculDuree(){
+        this.duree = 0; // Initialise la durée à 0
         for (Musique musique : musiques ) {
-             this.duree = 0; // Réinitialise la durée à chaque itération
              this.duree += musique.getdureeSeconde(); // Ajoute la durée de chaque musique à la durée totale
           }
     }  
