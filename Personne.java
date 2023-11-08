@@ -1,4 +1,4 @@
-public class Personne {
+public abstract class Personne {
     protected String nom; // Le nom de la personne
     protected String prenom; // Le prénom de la personne
     protected String email; // L'adresse email de la personne
