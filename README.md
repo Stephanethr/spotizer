@@ -38,6 +38,3 @@ Le projet est structuré en plusieurs classes Java, chacune représentant une en
 - [Frédéric Turcq-santucci](https://github.com/fturcq-santucci)
 - [Stéphane Thiry](https://github.com/Stephanethr)
 
-## Licence
-
-Ce projet est sous licence MIT - voir le fichier `LICENSE` pour plus de détails.
